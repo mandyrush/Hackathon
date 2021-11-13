@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Stories from './components/stories';
+
+import "./App.css";
+
+const API_URL = 'http://hn.algolia.com/api/v1/search?tags=front_page';
 
 function App() {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    console.log('mounted');
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => setStories(data.hits))
+      .catch(error => console.log('Error', error));
+  }, [])
+
+  useEffect(() => {
+    console.log('stories', stories);
+  }, [stories])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Stories stories={stories} />
     </div>
   );
 }
