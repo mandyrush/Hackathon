@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from './components/header';
 import Stories from './components/stories';
 
 import "./App.css";
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Stories stories={stories} />
     </div>
   );
