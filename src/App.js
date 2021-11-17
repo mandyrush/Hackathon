@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from './components/header';
 import Stories from './components/stories';
+import Filter from './components/FIlter'
 
 import "./App.css";
 
@@ -33,7 +34,9 @@ function App() {
   return (
     <div className="App">
       <Header searchStories={searchStories} />
+      <Filter />
       <Stories stories={stories} />
+     
     </div>
   );
 }

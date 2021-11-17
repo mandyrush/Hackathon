@@ -29,9 +29,12 @@ export default function Header({ searchStories }) {
             </div>
             <div className="input-container">
                 <input type="text" onChange={(event) => handleChange(event)} placeholder="Search stories by title, url or author" />
-                
+
             </div>
             <a href="/settings"> Settings</a>
+
         </div>
+
+
     )
 }

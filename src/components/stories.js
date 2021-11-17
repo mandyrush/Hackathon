@@ -1,12 +1,14 @@
 import React from "react";
-
 export default function Stories({ stories }) {
     return (
+
         <ul>
             {stories.map((story, index) => {
                 const storyUrl = '/item?id=' + story.objectID;
                 const authorUrl = '/user?id=' + story.author;
                 return (
+
+
                     <li key={index}>
                         <p>{story.title} <a href={story.url}>{story.url}</a></p>
                         <p>
@@ -16,5 +18,7 @@ export default function Stories({ stories }) {
                 )
             })}
         </ul>
+
+
     )
 }
