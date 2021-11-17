@@ -3,9 +3,9 @@ import React from "react";
 
 import "../styles/header.css";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCog } from '@fortawesome/free-solid-svg-icons';
-// import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header({ searchStories }) {
     const [query, setQuery] = useState([]);
@@ -29,12 +29,9 @@ export default function Header({ searchStories }) {
             </div>
             <div className="input-container">
                 <input type="text" onChange={(event) => handleChange(event)} placeholder="Search stories by title, url or author" />
-
+                <FontAwesomeIcon icon={faSearch} className="search-icon" />
             </div>
-            <a href="/settings"> Settings</a>
-
+            <a href="/settings"><FontAwesomeIcon icon={faCog} /> Settings</a>
         </div>
-
-
     )
 }
